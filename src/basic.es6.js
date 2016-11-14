@@ -3,11 +3,10 @@
 require('babel-polyfill');
 
 import {createStore} from 'redux';
+import {todoApp} from './reducers/index.js';
 import {addTodo, toggleTodo, setVisibilityFilter} from './actions/index.js';
 
-let store = createStore(() => {
-  return 'Hello, Redux';
-});
+let store = createStore(todoApp);
 
 const addTodoElem = document.getElementById('addTodo');
 const input = addTodoElem.getElementsByTagName('input')[0];
