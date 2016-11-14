@@ -1,5 +1,11 @@
 {
-  "extends": "google",
+  "extends": [
+    "google",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -7,6 +13,9 @@
     "mocha": true
   },
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   }
 }
