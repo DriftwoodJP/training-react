@@ -1,0 +1,48 @@
+{
+  "name": "sandbox-es6",
+  "version": "0.2.8",
+  "description": "sandbox es6(2015)",
+  "main": "",
+  "scripts": {
+    "start": "parallelshell 'npm run serve' 'npm run development' 'npm run watch'",
+    "build": "npm run lint && npm run test && npm run production && npm run doc",
+    "development": "BABEL_ENV=development watchify ./src/basic.es6.js --debug --transform babelify --outfile 'exorcist ./lib/basic.js.map > ./lib/basic.js' --verbose",
+    "doc": "esdoc -c .esdoc.json",
+    "lint": "eslint src/ test/",
+    "production": "BABEL_ENV=production browserify ./src/basic.es6.js --debug --transform babelify | exorcist ./lib/basic.js.map > ./lib/basic.js",
+    "serve": "serve -p 3000 .",
+    "test": "mocha test/**/*.test.js",
+    "watch": "watch 'npm run lint && npm run test' src/ test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DriftwoodJP/sandbox-es6.git"
+  },
+  "author": "DriftwoodJP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DriftwoodJP/sandbox-es6/issues"
+  },
+  "homepage": "https://github.com/DriftwoodJP/sandbox-es6#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-unassert": "^2.1.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-jsdoc-to-assert": "^4.0.0",
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-register": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "esdoc": "^0.4.8",
+    "eslint": "^3.9.1",
+    "eslint-config-google": "^0.7.0",
+    "exorcist": "^0.4.0",
+    "mocha": "^3.1.2",
+    "parallelshell": "^2.0.0",
+    "power-assert": "^1.4.1",
+    "serve": "^1.4.0",
+    "unassert": "^1.4.1",
+    "watch": "^1.0.1",
+    "watchify": "^3.7.0"
+  }
+}
