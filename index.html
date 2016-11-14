@@ -2,9 +2,31 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>sandbox-es6</title>
+  <title>Simple ToDo App</title>
 </head>
 <body>
+  <div id="app">app</div>
+  <!-- テキスト入力 -->
+  <div id="addTodo">
+    <form onSubmit="">
+      <input type="text">
+      <button type="submit">Add ToDo</button>
+    </form>
+  </div>
+
+  <!-- ToDo一覧 -->
+  <ul id="todoList">
+    <li>First ToDo</li>
+    <li style="text-decoration: line-through">Second ToDo</li>
+    <li>Third ToDo</li>
+  </ul>
+
+  <!-- フィルタリング -->
+  <p id="links">
+    Show:
+    <span>All</span>, <a href="">Active</a>, <a href="">Completed</a>
+  </p>
+
   <script src="/lib/basic.js"></script>
   <noscript>JavaScript が利用できません。</noscript>
 </body>
